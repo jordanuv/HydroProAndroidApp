@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- creating circular progress bar - style, dimensions, progress and constaints for position-->
+    <ProgressBar
+        android:id="@+id/progressHydration"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@android:color/transparent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"/>
+
+    <!-- Text to show current progress out of 125 oz by wrapping content and setting text and contraints of progress layout -->
+    <TextView
+        android:id="@+id/textViewProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 / 125 oz"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintBottom_toBottomOf="@id/progressHydration"
+        app:layout_constraintEnd_toEndOf="@id/progressHydration"
+        app:layout_constraintStart_toStartOf="@id/progressHydration"
+        app:layout_constraintTop_toTopOf="@id/progressHydration" />
+
+    <!-- simple undo button layout, this sets color, text, size and constraints  -->
+    <Button
+        android:id="@+id/buttonUndo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UNDO"
+        android:background="@color/design_default_color_error"
+    android:textColor="#FFFFFF"
+    app:layout_constraintStart_toEndOf="@id/buttonConfirmDrink"
+    app:layout_constraintTop_toTopOf="@id/buttonConfirmDrink"
+    android:layout_marginStart="8dp"/>
+
+
+    <!-- enter user input field for the amount of water drank, constarints, dimesions and margin -->
+    <EditText
+        android:id="@+id/editTextOuncesDrank"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="#D9D9D9"
+        android:hint="Enter amount in oz"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/progressHydration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"/>
+
+    <!-- Button to confirm the drink amount basically set up for submission to add to ounce total -->
+    <Button
+        android:id="@+id/buttonConfirmDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:background="#7879F0"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextOuncesDrank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- simple textview in black to describe the "current hydration schedule" selected.  -->
+    <TextView
+        android:id="@+id/textViewHydrationSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Hydration Schedule: "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/textViewActivityLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="35dp"/>
+
+    <!-- switch set as frontend design for reminders turned on or off using bell icon and color  -->
+    <Switch
+        android:id="@+id/switchReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumb="@drawable/baseline_doorbell_24"
+    app:layout_constraintEnd_toEndOf="@id/progressHydration"
+    app:layout_constraintTop_toTopOf="@id/progressHydration"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="1dp"/>
+
+    <!-- another schedule display textview  -->
+    <TextView
+        android:id="@+id/textHydrationScheduleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M/W/F (E. 3hrs)"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewHydrationSchedule"
+        app:layout_constraintStart_toEndOf="@id/textViewHydrationSchedule"
+        android:layout_marginStart="2dp"/>
+
+    <!-- Updated Activity Level label, just to display selected activity level -->
+    <TextView
+        android:id="@+id/textViewActivityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Activity Level: "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="60dp"/>
+
+    <!-- display text again in black for activity level  -->
+    <TextView
+        android:id="@+id/textActivityLevelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moderate"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewActivityLevel"
+        app:layout_constraintStart_toEndOf="@id/textViewActivityLevel"
+        android:layout_marginStart="4dp"/>
+
+
+    <!-- Info button, set constaints and color and margin, leads to info page-->
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Info"
+        android:background="#A5FAAE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Settings button constraints, color, margin set to settings page -->
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:background="#A5FAAE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/buttonInfo"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLogout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Logout button - simple button set constraints and margin takes us back to splash home -->
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:background="#7879F0"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/buttonSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

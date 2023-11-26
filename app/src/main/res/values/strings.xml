@@ -1,3 +1,14 @@
+<!-- string resources for each reference in basic text description-->
 <resources>
     <string name="app_name">HydroPro</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="email_description">Email address input field</string>
+    <string name="username_hint">Choose a username</string>
+    <string name="username_description">Username input field</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="password_description">Password input field</string>
+    <string name="confirm_password_hint">Confirm your password</string>
+    <string name="confirm_password_description">Confirm password input field</string>
+    <string name="chart_description">Hydration level chart</string>
+
 </resources>

@@ -1,0 +1,50 @@
+<!-- set root layout and then use constaint matchintg parent height and color -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6">
+
+    <!-- simple ImageView for displaying a urine chart, with width height image source and position (x y) -->
+    <ImageView
+        android:id="@+id/imageViewChart"
+        android:layout_width="390dp"
+        android:layout_height="280dp"
+        android:contentDescription="@string/chart_description"
+        android:src="@drawable/pipi_chart"
+        android:layout_marginStart="-20dp"
+
+    tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="10dp" />
+
+    <!-- ImageButton for a back button simple width height color icon and alignment -->
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1A81DF"
+        android:src="@android:drawable/ic_media_previous"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:padding="16dp" />
+
+    <!-- using TextView for displaying info - width height color, alignment text size and margins -->
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+    android:background="#D9D9D9"
+    android:padding="16dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    android:textSize="10dp"
+    android:layout_marginTop="290dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginBottom="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

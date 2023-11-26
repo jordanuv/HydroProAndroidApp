@@ -25,6 +25,8 @@
 
         </activity>
 
+        <activity android:name=".InfoActivity"/>
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -40,6 +42,16 @@
             android:exported="true">
         </activity>
 
-        </application>
+        <activity
+            android:name=".CreateAccount"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".HydrationHome"
+            android:exported="true">
+        </activity>
+
+
+    </application>
 
 </manifest>

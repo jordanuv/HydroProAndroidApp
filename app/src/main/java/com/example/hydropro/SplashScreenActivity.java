@@ -62,14 +62,17 @@ public class SplashScreenActivity extends AppCompatActivity implements Navigatio
     }
 
     private void navigateToCreateAccountScreen() {
-        // Implement navigation to the "Create Account" screen (to be implemented later)
-        //startNewActivity(CreateAccountActivity.class);
+
+        Intent intent = new Intent(this, CreateAccount.class);
+        startActivity(intent);
     }
 
+
     private void navigateToHomeScreen() {
-        // Implement navigation to the "Home" screen (to be implemented later)
-        //startNewActivity(HomeActivity.class);
+        Intent intent = new Intent(SplashScreenActivity.this, HydrationHome.class);
+        startActivity(intent);
     }
+
 
     @Override
     // Method for starting any new activity
